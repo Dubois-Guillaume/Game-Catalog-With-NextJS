@@ -9,7 +9,11 @@ const DisplayGameNameFromAPI: React.FC<{ gamesArray }> = ({ gamesArray }) => {
     <div>
       <ul>
         {gamesArray.map((game) => {
-          return <li key={game.name}>{game.name}</li>;
+          return (
+            <li key={game.name}>
+              <a href={`/${game.slug}`}>{game.name}</a>
+            </li>
+          );
         })}
       </ul>
     </div>
@@ -19,9 +23,9 @@ const DisplayGameNameFromAPI: React.FC<{ gamesArray }> = ({ gamesArray }) => {
 export default DisplayGameNameFromAPI;
 
 export const getServerSideProps: GetServerSideProps = async () => {
-  const mongodb = await getDatabase();
+  // const mongodb = await getDatabase();
 
-  const games = await mongodb.collection("Games").find().toArray();
+  // const games = await mongodb.collection("Games").find().toArray();
 
   // console.log(games);
 
