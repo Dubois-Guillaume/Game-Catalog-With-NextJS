@@ -3,11 +3,12 @@ import Image from "next/image";
 import styles from "../styles/Home.module.css";
 import { GetServerSideProps } from "next";
 import { getDatabase } from "../src/database";
+import Link from "next/link";
 
 const DisplayGameNameFromAPI: React.FC<{ gamesArray }> = ({ gamesArray }) => {
   return (
     <div>
-      <a href="/api/auth/login">Login</a>
+      <Link href="/api/auth/login">Login</Link>
       <ul>
         {gamesArray.map((game) => {
           return (
