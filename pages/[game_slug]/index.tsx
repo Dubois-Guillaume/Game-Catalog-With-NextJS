@@ -13,6 +13,7 @@ const DisplayGameInformation: React.FC<{ gameInfo }> = ({ gameInfo }) => {
         src={`${gameInfo.cover_url}`}
         alt="cover du jeux"
       />
+      <p>{gameInfo.games_platforms[0].platform.name}</p>
     </div>
   );
 };
@@ -25,7 +26,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
   );
   const gameInfo = await response.json();
 
-  // console.log("gameInfo", gameInfo);
+  console.log("gameInfo", gameInfo.games_platforms[0].platform);
 
   return {
     props: {
