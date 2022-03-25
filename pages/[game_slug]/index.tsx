@@ -26,7 +26,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
   );
   const gameInfo = await response.json();
 
-  console.log("gameInfo", gameInfo.games_platforms[0].platform);
+  // console.log("gameInfo", gameInfo.games_platforms[0].platform);
 
   return {
     props: {

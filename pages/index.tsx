@@ -7,6 +7,7 @@ import { getDatabase } from "../src/database";
 const DisplayGameNameFromAPI: React.FC<{ gamesArray }> = ({ gamesArray }) => {
   return (
     <div>
+      <a href="/api/auth/login">Login</a>
       <ul>
         {gamesArray.map((game) => {
           return (
